@@ -1,5 +1,5 @@
 {
-  "name": "websockets",
+  "name": "webtty",
   "version": "1.0.0",
   "description": "",
   "dependencies": {
@@ -9,12 +9,13 @@
     "@types/socket.io": "^2.1.0",
     "express": "^4.16.4",
     "express-ws": "^4.0.0",
-    "pty.js": "^0.3.1",
+    "jquery": "^3.4.1",
+    "node-pty": "^0.8.1",
     "socket.io": "^2.1.1",
     "typescript": "^3.2.0-dev.20181103",
     "xterm": "^3.8.0"
   },
   "devDependencies": {},
-  "author": "david karapetyan",
+  "author": "Seungkyun Hong",
   "license": "MIT"
 }

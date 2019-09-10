@@ -4,12 +4,16 @@
     <title>bash</title>
     <link rel="stylesheet" href="/node_modules/xterm/dist/xterm.css" />
     <link rel="stylesheet" href="/node_modules/xterm/dist/addons/fullscreen/fullscreen.css" />
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
     <script src="/node_modules/xterm/dist/xterm.js"></script>
     <script src="/node_modules/xterm/dist/addons/fit/fit.js"></script>
     <script src="/node_modules/xterm/dist/addons/attach/attach.js"></script>
-    <script src="/node_modules/xterm/dist/addons/winptyCompat/winptyCompat.js"></script>
+<!--    <script src="/node_modules/xterm/dist/addons/winptyCompat/winptyCompat.js"></script>-->
+    <style>
+      #terminal { width: 1100px; height: 680px; overflow: hidden; }
+    </style>
   </head>
   <body>
     <div id="terminal"></div>
@@ -17,14 +21,15 @@
       // No idea what these are about. Just copied them from the demo code
       Terminal.applyAddon(attach);
       Terminal.applyAddon(fit);
-      Terminal.applyAddon(winptyCompat);
+      // Terminal.applyAddon(winptyCompat);
       // The terminal
       const term = new Terminal();
       // No idea what this does
-      term.winptyCompatInit();
+      // term.winptyCompatInit();
       // This kinda makes sense
       const container = document.getElementById('terminal');
       term.open(container);
+      term.fit();
       // Open the websocket connection to the backend
       const protocol = (location.protocol === 'https:') ? 'wss://' : 'ws://';
       const port = location.port ? `:${location.port}` : '';
@@ -33,6 +38,9 @@
       // Attach the socket to the terminal
       socket.onopen = (ev) => { term.attach(socket); };
       // Not going to worry about close/error for the websocket
+
+      // style: hide scroll bar
+      $(".xterm .xterm-viewport").css("overflow-y", "hidden");
     </script>
   </body>
 </html>
