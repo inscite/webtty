@@ -7,7 +7,7 @@ HTML5 terminal emulation based on Node.js and Linux shell.
 * **Linux/macOS with bash/ssh** (Korea Supercomputing System/KSC) installation
 * **Node.js V8 Engine** **(DOES NOT WORKING WITH LATEST V10/V12 Engine)**<br/>
 To get **V8 Engine**, refer this site: https://nodejs.org/dist/latest-v8.x/ <br/>
-Tested on CentOS 7/macOS 10.10 High Sierra with v8.16.1
+Tested on CentOS 7/macOS 10.13 High Sierra with v8.16.1
 * (Optional) **Python 2** may be required during npm package installation
 ## Setup
 
