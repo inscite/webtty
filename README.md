@@ -35,3 +35,7 @@ Target List:
 Query setup: `http://localhost:3600?user=<user>&target=<target>`
 
 ![](pic_app-ssh-spawn.png)
+
+## License
+Copyright (c) 2018, David Karapetyan (MIT License).<br/>
+Copyright (c) 2019, Seungkyun Hong (MIT License).
