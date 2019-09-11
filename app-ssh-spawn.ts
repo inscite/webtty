@@ -10,9 +10,23 @@ app.use(express.static(`${__dirname}/static`));
 // Instantiate shell and set up data handlers
 expressWs.app.ws('/shell', (ws, req) => {
 
-  // Spawn the shell
-  // Compliments of http://krasimirtsonev.com/blog/article/meet-evala-your-terminal-in-the-browser-extension
-  const shell = pty.spawn('/bin/bash', [], {
+  const username = req.query.user ? req.query.user : '';
+  const target = req.query.target ? req.query.target : '';
+
+  var host:string;
+  switch (target) {
+    case "nurion": { host = "nurion.ksc.re.kr"; break; }
+    case "kepler": { host = "glogin01.ksc.re.kr"; break; }
+    case "volta": { host = "glogin02.ksc.re.kr"; break; }
+    default: { host = ""; break; }
+  }
+
+  // Spawn the ssh process
+  // const shell = pty.spawn('/bin/bash', [], {
+  const shell = pty.spawn(
+      '/usr/bin/ssh',
+      ['-p', '22', '-l', username, host],
+      {
     name: 'xterm-color',
     cwd: process.env.PWD,
     env: process.env

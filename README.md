@@ -1,4 +1,37 @@
-To run the server you'll need to clone this repository and run `npm i && ./node_modules/.bin/tsc . && node app.js`. If that last stepped worked then visiting localhost on port 3000 will present you with a shell that you can interact with as you would with a regular shell.
+#WebTTY [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-See the following post for motivation: https://dev.to/davidk01/ptyjs--xtermjs--shell-in-your-browser-1f9c.
-![demo.gif](demo.gif)
+## Summary
+HTML5 terminal emulation based on Node.js and Linux shell.
+
+## Requirements
+* **Linux/macOS with bash/ssh** (Korea Supercomputing System/KSC) installation
+* **Node.js V8 Engine** **(DOES NOT WORKING WITH LATEST V10/V12 Engine)**<br/>
+To get **V8 Engine**, refer this site: https://nodejs.org/dist/latest-v8.x/ <br/>
+Tested on CentOS 7/macOS 10.10 High Sierra with v8.16.1
+* (Optional) **Python 2** may be required during npm package installation
+## Setup
+
+* Common: `npm install`<br/>Package installation may be omitted after initial setup.
+
+* Bash: `./node_modules/.bin/tsc ./app.ts && node app.js`
+
+* SSH (KSC): `./node_modules/.bin/tsc ./app-ssh-spawn.ts && node app-ssh-spawn.ts`
+
+## Usage
+
+Web server may be launched on: http://localhost:3600
+
+### Basic Bash launch
+![](pic_app.png)
+### SSH connection to KSC
+
+`user` and `target` must be passed to web server via GET method.
+
+Target List:
+* nurion: Knights Landing (KNL) / Skylake (SKL) - Nurion System
+* kepler: Kepler GPU - Neuron System
+* volta: Volta GPU - Neuron System
+
+Query setup: `http://localhost:3600?user=<user>&target=<target>`
+
+![](pic_app-ssh-spawn.png)
