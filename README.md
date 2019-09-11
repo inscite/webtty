@@ -1,4 +1,4 @@
-#WebTTY [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# WebTTY [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Summary
 HTML5 terminal emulation based on Node.js and Linux shell.
