@@ -13,7 +13,7 @@ Tested on CentOS 7/macOS 10.13 High Sierra with v8.16.1
 
 * Common: `npm install`<br/>Package installation may be omitted after initial setup.
 
-* Bash: `./node_modules/.bin/tsc ./app.ts && node app.js`
+* Bash: `./node_modules/.bin/tsc ./app.ts && node app.ts`
 
 * SSH (KSC): `./node_modules/.bin/tsc ./app-ssh-spawn.ts && node app-ssh-spawn.ts`
 
